@@ -44,20 +44,22 @@ Inventory::~Inventory()
 		delete[] inventory[i];
 	}
 	delete[] inventory;
+	
 }
 
 void Inventory::GetItem(int x, int y)
 {
-	inventory[x][y]++;
+	inventory[y][x]++;
 }
 
 void Inventory::UseItem(int x, int y)
 {
-	inventory[x][y]--;
+	inventory[y][x]--;
 }
 
 void Inventory::PrintItem()
 {
+	cout << endl;
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
